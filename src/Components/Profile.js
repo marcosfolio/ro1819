@@ -18,6 +18,10 @@ const Profile = ({
         Dorsal:
         {user.dorsal}
       </h2>
+      <h2>
+        Goles:
+        {user.goals}
+      </h2>
       <Link to="/users">Volver</Link>
     </div>
   );

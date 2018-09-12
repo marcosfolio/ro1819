@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderNav = styled.header`
-  color: #000;
-  background: #fff;
+  color: #ffffff;
+  background: #00519b;
   padding: 10px 20px;
+  border-bottom: 2px solid #0267b2;
 
   ul {
     display: flex;
@@ -14,10 +15,14 @@ const HeaderNav = styled.header`
 
   a {
     padding: 10px 20px;
-    color: #000;
+    color: #ffffff;
+    font-weight: bold;
   }
   a:hover {
-    background: #e6e6e6;
+    background: #0267b2;
+  }
+  a.active {
+    background: #0267b2;
   }
 `;
 
@@ -29,10 +34,10 @@ const Header = () => (
           <Link to="/">Real Oviedo</Link>
         </li>
         <li>
-          <Link to="/users">Jugadores</Link>
+          <NavLink to="/users">Plantilla</NavLink>
         </li>
         <li>
-          <Link to="/about">Entrenador</Link>
+          <NavLink to="/about">Historia</NavLink>
         </li>
       </ul>
     </nav>
