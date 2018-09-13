@@ -5,3 +5,12 @@
 .card {
   margin-bottom: 20px;
 }
+.progressbar-container {
+  width: 130px;
+  display: block;
+  margin: 30px auto 0;
+}
+.progressbar-container .CircularProgressbar .CircularProgressbar-text {
+  font-weight: bold;
+  font-size: 16px;
+}

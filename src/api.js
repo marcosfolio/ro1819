@@ -12,7 +12,7 @@ const playersAPI = {
       id: 2,
       name: "Johannesson",
       playerUrl: "/images/johannesson.jpg",
-      minutes: 270,
+      minutes: 330,
       dorsal: "2",
       goals: "0"
     },
@@ -20,6 +20,7 @@ const playersAPI = {
       id: 3,
       name: "Alanís",
       playerUrl: "/images/alanis.jpg",
+      minutes: 0,
       dorsal: "3",
       goals: "0"
     },
@@ -27,6 +28,7 @@ const playersAPI = {
       id: 5,
       name: "Forlín",
       playerUrl: "/images/forlin.jpg",
+      minutes: 27,
       dorsal: "5",
       goals: "0"
     },

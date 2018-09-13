@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import CircularProgressbar from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-function Percentage(u) {
-  return (u.minutes / 360) * 100;
+function MinutesPercentage(u) {
+  var num = (u.minutes / 360) * 100;
+  return num.toFixed(2);
 }
 
 const mapUser = url =>
@@ -18,13 +19,15 @@ const mapUser = url =>
           <h5 className="card-title">
             {u.dorsal}- {u.name}
           </h5>
-          <p class="card-text">Goles: {u.goals}</p>
-          <p class="card-text">Minutos jugados: {u.minutes}</p>
-          <p>Porcentaje: {Percentage(u)}%</p>
-          <CircularProgressbar
-            percentage={Percentage(u)}
-            text={`${Percentage(u)}%`}
-          />
+          <p className="card-text">Goles: {u.goals}</p>
+          <p className="card-text">Minutos jugados: {u.minutes}</p>
+          <p>Porcentaje: {MinutesPercentage(u)}%</p>
+          <div className="progressbar-container">
+            <CircularProgressbar
+              percentage={MinutesPercentage(u)}
+              text={`${MinutesPercentage(u)}%`}
+            />
+          </div>
         </div>
         <div class="card-body">
           <Link className="btn btn-primary" to={`${url}/${u.id}`}>
