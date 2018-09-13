@@ -1,10 +1,16 @@
 import React from "react";
-import UsersAPI from "../api";
+import PlayersAPI from "../api";
 import "./components.css";
 import { Link } from "react-router-dom";
+import CircularProgressbar from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+
+function Percentage(u) {
+  return (u.minutes / 360) * 100;
+}
 
 const mapUser = url =>
-  UsersAPI.all().map(u => (
+  PlayersAPI.all().map(u => (
     <div className="col-md-3 float-left" key={u.id}>
       <div className="card">
         <img class="card-img-top" src={u.playerUrl} alt={u.name} />
@@ -13,6 +19,12 @@ const mapUser = url =>
             {u.dorsal}- {u.name}
           </h5>
           <p class="card-text">Goles: {u.goals}</p>
+          <p class="card-text">Minutos jugados: {u.minutes}</p>
+          <p>Porcentaje: {Percentage(u)}%</p>
+          <CircularProgressbar
+            percentage={Percentage(u)}
+            text={`${Percentage(u)}%`}
+          />
         </div>
         <div class="card-body">
           <Link className="btn btn-primary" to={`${url}/${u.id}`}>
