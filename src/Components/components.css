@@ -14,3 +14,14 @@
   font-weight: bold;
   font-size: 16px;
 }
+.m-l-10 {
+  margin-left: 10px;
+}
+.card-text {
+  margin: 10px 0;
+}
+.btn-ro {
+  width: 100%;
+  color: #fff !important;
+  font-weight: bold;
+}

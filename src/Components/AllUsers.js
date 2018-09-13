@@ -4,6 +4,8 @@ import "./components.css";
 import { Link } from "react-router-dom";
 import CircularProgressbar from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFutbol, faClock, faSquare } from "@fortawesome/free-solid-svg-icons";
 
 function MinutesPercentage(u) {
   var num = (u.minutes / 360) * 100;
@@ -19,9 +21,22 @@ const mapUser = url =>
           <h5 className="card-title">
             {u.dorsal}- {u.name}
           </h5>
-          <p className="card-text">Goles: {u.goals}</p>
-          <p className="card-text">Minutos jugados: {u.minutes}</p>
-          <p>Porcentaje: {MinutesPercentage(u)}%</p>
+          <p className="card-text">
+            <span>
+              <FontAwesomeIcon icon={faFutbol} /> {u.goals}
+            </span>
+            <span className="m-l-10">
+              <FontAwesomeIcon icon={faSquare} color="#f7ec28" />{" "}
+              {u.yellowCards}
+            </span>
+            <span className="m-l-10">
+              <FontAwesomeIcon icon={faSquare} color="red" /> {u.redCards}
+            </span>
+          </p>
+          <p className="card-text">
+            <FontAwesomeIcon icon={faClock} /> Minutos jugados: {u.minutes}
+          </p>
+          <p>Porcentaje min. jugados:</p>
           <div className="progressbar-container">
             <CircularProgressbar
               percentage={MinutesPercentage(u)}
@@ -30,7 +45,7 @@ const mapUser = url =>
           </div>
         </div>
         <div class="card-body">
-          <Link className="btn btn-primary" to={`${url}/${u.id}`}>
+          <Link className="btn btn-primary btn-ro" to={`${url}/${u.id}`}>
             Ver ficha del jugador
           </Link>
         </div>

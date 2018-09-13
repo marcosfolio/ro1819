@@ -3,6 +3,10 @@ import styled, { injectGlobal } from "styled-components";
 import reset from "../Styles/reset";
 import Main from "./Main";
 import Header from "./Header";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faFootballBall } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faFootballBall);
 
 injectGlobal`${reset}`;
 
