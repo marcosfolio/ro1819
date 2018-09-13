@@ -22,6 +22,11 @@ const Profile = ({
         Goles:
         {user.goals}
       </h2>
+      <video width="400" controls>
+        <source src={user.playerVideoUrl} type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+
       <Link to="/users">Volver</Link>
     </div>
   );
