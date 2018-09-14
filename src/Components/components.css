@@ -24,4 +24,14 @@
   width: 100%;
   color: #fff !important;
   font-weight: bold;
+  background-color: #01519b;
+}
+.btn-ro:hover {
+  background-color: #0267b2;
+}
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #0267b2 !important;
+}
+body {
+  background-color: #bee2fb;
 }
