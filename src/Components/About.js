@@ -4,7 +4,8 @@ import VideosAPI from "../video-api";
 const mapVideos = url =>
   VideosAPI.all().map(v => (
     <div className="col-sm-4">
-      <h1>Tejera</h1>
+      <h1>{v.scorer}</h1>
+      <p>{v.match}</p>
       <video width="100%" controls>
         <source src={v.videoUrl} type="video/mp4" />
         Your browser does not support HTML5 video.
