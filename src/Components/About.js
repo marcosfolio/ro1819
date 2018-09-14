@@ -8,7 +8,7 @@ const mapVideos = url =>
       <p>{v.match}</p>
       <video width="100%" controls>
         <source src={v.videoUrl} type="video/mp4" />
-        Your browser does not support HTML5 video.
+        Tu navegador no soporta HTML5 Vídeo.
       </video>
     </div>
   ));
